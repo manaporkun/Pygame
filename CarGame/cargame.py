@@ -20,6 +20,7 @@ sound_score1 = pygame.mixer.Sound("piano1.wav")
 sound_score2 = pygame.mixer.Sound("piano2.wav")
 sound_score3 = pygame.mixer.Sound("piano3.wav")
 sound_score4 = pygame.mixer.Sound("piano4.wav")
+sound_gameover = pygame.mixer.Sound("gameover.flac")
 
 car_width = 55
 car_height = 108
@@ -52,9 +53,10 @@ def message_display(text, position, size):
 
 
 def crash(score):
-    message_display("CRASHED", ((width * 0.5), (height * 0.2)), 60)
+    message_display("Game Over", ((width * 0.5), (height * 0.2)), 60)
     message_display("SCORE: " + str(score), ((width * 0.5), (height * 0.4)), 30)
-    time.sleep(1)
+    sound_gameover.play()
+    time.sleep(2)
     run()
 
 
@@ -115,7 +117,7 @@ def run():
             car_x += car_x_change
             car_y += car_y_change
         else:
-            message_display("KEYS ARE CHANGED",(width/2,height-50),50)
+            message_display("KEYS ARE CHANGED", (width / 2, height - 50), 50)
             car_x -= car_x_change
             car_y -= car_y_change
 
