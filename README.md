@@ -1,6 +1,6 @@
 # Pygame
 
-I'm making games in Python with using Pygame to learn and understand logic of making games.
+I'm making games in Python using Pygame to learn and understand the logic of making games.
 # **Car Game**
 ![](CarGame/cargame.gif)
 
